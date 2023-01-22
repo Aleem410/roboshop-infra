@@ -1,3 +1,3 @@
 variable "instances" {}
-variable "DOMAIN_NAME" {}
-variable "ENV" {}
+#variable "DOMAIN_NAME" {}
+#variable "ENV" {}

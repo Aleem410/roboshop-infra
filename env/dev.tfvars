@@ -5,5 +5,5 @@ instances = [
   "shipping",
   "user"
 ]
-DOMAIN_NAME = "mydevops410.online"
-ENV = "dev"
+#DOMAIN_NAME = "mydevops410.online"
+#ENV = "dev"
