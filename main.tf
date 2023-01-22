@@ -55,7 +55,7 @@ resource "null_resource" "cluster" {
     abc = timestamp()
   }
   count = length(var.instances)
-  provisioner "remote-exec"
+  provisioner "remote-exec" {
    connection {
     host = element(aws_instance.ec2.*.private_ip, count.index)
     user = "root"
