@@ -1,4 +1,4 @@
-resource "aws_spot_instance_request" "ec2" {
+resource "aws_instance" "ec2" {
   count                  = length(var.instances)
   ami                    = data.aws_ami.centos8.id
   instance_type          = "t3.micro"
