@@ -37,15 +37,16 @@ resource "aws_security_group" "allow_tls" {
     Name = "allow_tls"
   }
 }
-#
-#data "aws_route53_zone" "domain" {
-#  name         = var.DOMAIN_NAME
-#}
-#resource "aws_route53_record" "dns-record" {
-#  zone_id = data.aws_route53_zone.domain.zone_id
-#  name    = "${var.ENV}-${element(var.instances, count.index)}.${var.DOMAIN_NAME}"
-#  type    = "A"
-#  ttl     = 300
-#  records = [element(aws_instance.ec2.*.private_ip, count.index)]
-#}
-#
+
+data "aws_route53_zone" "domain" {
+  name         = var.DOMAIN_NAME
+}
+resource "aws_route53_record" "dns-record" {
+  zone_id = data.aws_route53_zone.domain.zone_id
+  count = length(var.instances)
+  name    = "${var.ENV}-${element(var.instances, count.index)}.${var.DOMAIN_NAME}"
+  type    = "A"
+  ttl     = 300
+  records = [element(aws_instance.ec2.*.private_ip, count.index)]
+}
+
