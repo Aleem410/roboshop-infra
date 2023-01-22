@@ -56,11 +56,11 @@ resource "null_resource" "cluster" {
   }
   count = length(var.instances)
   provisioner "remote-exec"
-  connection {
+   connection {
     host = element(aws_instance.ec2.*.private_ip, count.index)
     user = "root"
     password = "DevOps321"
-  }
+   }
     inline = [
       "labauto ansible"
     ]
