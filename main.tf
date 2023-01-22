@@ -61,7 +61,7 @@ resource "null_resource" "cluster" {
     user = "root"
     password = "DevOps321"
    }
-    inline = [
+   inline = [
       "labauto ansible"
     ]
   }
