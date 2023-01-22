@@ -48,3 +48,4 @@ resource "aws_route53_record" "dns-record" {
   ttl     = 300
   records = [element(aws_instance.ec2.*.private_ip, count.index)]
 }
+
