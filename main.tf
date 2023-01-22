@@ -37,3 +37,14 @@ resource "aws_security_group" "allow_tls" {
     Name = "allow_tls"
   }
 }
+
+data "aws_route53_zone" "domain" {
+  name         = var.DOMAIN_NAME
+}
+resource "aws_route53_record" "dns-record" {
+  zone_id = data.aws_route53_zone.domain.zone_id
+  name    = "${ENV}-${element(var.instances, count.index)}.${DOMAIN_NAME}}"
+  type    = "A"
+  ttl     = 300
+  records = [element(aws_instance.ec2.*.private_ip, count.index)]
+}
