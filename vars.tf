@@ -1,3 +1,2 @@
-variable "instances" {}
-variable "DOMAIN_NAME" {}
-variable "ENV" {}
+variable "env" {}
+variable "vpc_cidr_block" {}
