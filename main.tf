@@ -16,7 +16,7 @@ module "vpc" {
 module "docdb" {
   source                     = "github.com/Aleem410/tf-module-docdb"
   env                        = var.env
-  kms_key_id                 = each.value.kms_key_id
+  kms_key_id                 = var.kms_key_id
 
   for_each                   = var.docdb
   engine                     = each.value.engine
