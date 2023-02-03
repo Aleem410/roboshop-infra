@@ -14,7 +14,7 @@ module "vpc" {
 }
 
 module "docdb" {
-  source                     = "github.com/Aleem410/tf-module-docdb.git"
+  source                     = "github.com/Aleem410/tf-module-docdb"
   env                        = var.env
   for_each                   = var.docdb
   engine                     = each.value.engine
