@@ -5,6 +5,10 @@ default_vpc_cidr_block = "172.31.0.0/16"
 default_vpc_id = "vpc-00a494e89f26a41c5"
 default_route_table = "rtb-0d05b7dbef66fa0c7"
 
+#KMS information
+
+kms_key_id = "arn:aws:kms:us-east-1:827190588206:key/1d5395b0-d414-4c8d-a78f-751b030018a5"
+
 #vpc
 vpc = {
   dev = {

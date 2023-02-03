@@ -16,13 +16,16 @@ module "vpc" {
 module "docdb" {
   source                     = "github.com/Aleem410/tf-module-docdb"
   env                        = var.env
+  kms_key_id                 = each.value.kms_key_id
+
   for_each                   = var.docdb
   engine                     = each.value.engine
   backup_retention_period    = each.value.backup_retention_period
   preferred_backup_window    = each.value.preferred_backup_window
   skip_final_snapshot        = each.value.skip_final_snapshot
 
-  vpc = module.vpc
+
+vpc = module.vpc
 }
 
 output "vpc_id" {
