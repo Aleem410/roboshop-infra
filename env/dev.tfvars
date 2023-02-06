@@ -7,7 +7,6 @@ default_route_table = "rtb-0d05b7dbef66fa0c7"
 workstation_ip     =  "172.31.9.226/32"
 
 #KMS information
-
 kms_key_id = "arn:aws:kms:us-east-1:827190588206:key/1d5395b0-d414-4c8d-a78f-751b030018a5"
 
 #vpc
