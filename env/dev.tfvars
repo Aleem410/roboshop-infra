@@ -4,6 +4,7 @@ env = "dev"
 default_vpc_cidr_block = "172.31.0.0/16"
 default_vpc_id = "vpc-00a494e89f26a41c5"
 default_route_table = "rtb-0d05b7dbef66fa0c7"
+workstation_ip     =  "172.31.9.226/32"
 
 #KMS information
 
@@ -27,6 +28,8 @@ docdb = {
       preferred_backup_window = "07:00-09:00"
       skip_final_snapshot = true
       storage_encrypted   = true
+      instance_count      = 1
+      instance_class      = "db.t3.medium"
 
   }
 }
